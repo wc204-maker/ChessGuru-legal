@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ChessGuru — Email verified</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #f5f2e8;
+      background: #0a0b10;
+    }
+    .card {
+      width: 100%;
+      max-width: 26rem;
+      padding: 2rem 1.75rem;
+      border-radius: 14px;
+      background: #15171f;
+      border: 1px solid #2e3340;
+      text-align: center;
+    }
+    .icon {
+      font-size: 2.75rem;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f5d76e;
+    }
+    p {
+      margin: 0 0 1rem;
+      color: #c8c8d0;
+      font-size: 0.95rem;
+    }
+    .steps {
+      text-align: left;
+      margin: 1.25rem 0 0;
+      padding: 1rem 1.1rem;
+      border-radius: 10px;
+      background: #1c1f2a;
+      border: 1px solid #2e3340;
+    }
+    .steps strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #f5f2e8;
+      font-size: 0.9rem;
+    }
+    ol {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: #c8c8d0;
+      font-size: 0.9rem;
+    }
+    li { margin: 0.35rem 0; }
+    .error h1 { color: #f5a76e; }
+    .footer {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: #8b93a8;
+    }
+    a { color: #f5d76e; }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <div class="icon" id="icon">✓</div>
+    <h1 id="title">Email verified</h1>
+    <p id="message">Your ChessGuru account is ready. Head back to the app and sign in.</p>
+    <div class="steps" id="steps">
+      <strong>What to do next</strong>
+      <ol>
+        <li>Open <strong>ChessGuru</strong> on your iPhone</li>
+        <li>Tap your profile icon → <strong>Sign In</strong></li>
+        <li>Enter the email and password you just used</li>
+      </ol>
+    </div>
+    <p class="footer">
+      You can close this page. <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </div>
+  <script>
+    (function () {
+      var hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+      var query = new URLSearchParams(window.location.search);
+      var error =
+        query.get("error_description") ||
+        query.get("error") ||
+        hash.get("error_description") ||
+        hash.get("error");
+
+      if (error) {
+        document.getElementById("card").classList.add("error");
+        document.getElementById("icon").textContent = "!";
+        document.getElementById("title").textContent = "Link expired or invalid";
+        document.getElementById("message").textContent =
+          "This confirmation link may have already been used or has expired. Open ChessGuru and try signing up again, or sign in if you already confirmed.";
+        document.getElementById("steps").innerHTML =
+          "<strong>Need help?</strong><p style='margin:0.5rem 0 0;color:#c8c8d0;font-size:0.9rem'>Email <a href='mailto:chesssecondsupport@gmail.com'>chesssecondsupport@gmail.com</a> if you're stuck.</p>";
+      }
+    })();
+  </script>
+</body>
+</html>
