@@ -4,9 +4,9 @@ Static privacy policy and terms for App Store Connect. **No app source code** �
 
 ## Live URLs (after GitHub Pages is enabled)
 
-- Privacy: `https://wc204-maker.github.io/chessguru-legal/privacy.html`
-- Terms: `https://wc204-maker.github.io/chessguru-legal/terms.html`
-- Email verified: `https://wc204-maker.github.io/chessguru-legal/email-verified.html`
+- Privacy: `https://wc204-maker.github.io/ChessGuru-legal/privacy.html`
+- Terms: `https://wc204-maker.github.io/ChessGuru-legal/terms.html`
+- Email verified: `https://wc204-maker.github.io/ChessGuru-legal/email-verified.html`
 
 ## One-time setup
 
@@ -36,7 +36,7 @@ After you push `email-verified.html`, add this URL in the Supabase dashboard:
 
 1. **Authentication** → **URL Configuration**
 2. **Redirect URLs** → add:
-   `https://wc204-maker.github.io/chessguru-legal/email-verified.html`
+   `https://wc204-maker.github.io/ChessGuru-legal/email-verified.html`
 3. Save
 
 The app sends new sign-ups to that page when users tap the link in their inbox.
